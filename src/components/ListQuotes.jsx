@@ -1,9 +1,13 @@
-import React from 'react'
+import SingleQuote from "./SingleQuote";
 
-function ListQuotes() {
+function ListQuotes({ quotes,onDelete }) {
   return (
-    <div>ListQuotes</div>
-  )
+    <div className="flex flex-col gap-2">
+      {quotes.map((quote) => (
+        <SingleQuote key={quote.id} quote={quote} onDelete={onDelete} />
+      ))}
+    </div>
+  );
 }
 
-export default ListQuotes
+export default ListQuotes;
